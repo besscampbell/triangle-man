@@ -25,9 +25,10 @@ $(document).ready(function(){
       $("#triangle-answer").text(scalene);
     }
     else {
-      const isoceles = "an isoceles triangle";
+      const isosceles = "an isosceles triangle";
       $(".output").show();
-      $("#triangle-answer").text(isoceles);
+      $("#triangle-answer").text(isosceles);
+      $("#isosceles").show();
     };  
   });
 });
