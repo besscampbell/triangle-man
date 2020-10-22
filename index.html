@@ -10,29 +10,39 @@
   </title>
 </head>
 <body>
-  <div class="container">
+  <div class="container pt-5">
     <h1>
-      Track some Triangles
+      Find Your Very Own Triangle Man
     </h1>
     <form id="triangle">
-      <div class="form-group">
-        <label for="side1">Side 1:</label>
-        <input id="side1" class="form-control" type="text">
+      <div class="row">
+        <div class="form-group col-3-md">
+          <label for="side1">Side 1:</label>
+          <input id="side1" class="form-control" type="text">
+        </div>
+        <div class="form-group col-3-md">
+          <label for="side2">Side 2:</label>
+          <input id="side2" class="form-control" type="text">
+        </div>
+        <div class="form-group col-3-md">
+          <label for="side3">Side 3:</label>
+          <input id="side3" class="form-control" type="text">
+        </div>
+          <button type="submit" class="btn-primary">Calculate</button>
       </div>
-      <div class="form-group">
-        <label for="side2">Side 2:</label>
-        <input id="side2" class="form-control" type="text">
-      </div>
-      <div class="form-group">
-        <label for="side3">Side 3:</label>
-        <input id="side3" class="form-control" type="text">
-      </div>
-      <button type="submit" class="btn">Calculate</button>
     </form>
+    <div class="video">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/LsAiCs66l40" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
     <div class="output">
       <h3>output:</h3>
       <p>
-        That's <span id="triangle-answer"></span>!
+        That's <span id="triangle-answer"></span>! <br />
+        <img id="equilateral" src="img/equi-tri.png" alt= "A photo of an equilateral triangle">
+        <img id="scalene" src="img/sca-tri.png" alt="A photo of a scalene triangle">
+        <img id="isosceles" src="img/isos-tri.jpg" alt="A photo of an isosceles triangle">  
+        <img id="notTriangle" src="img/not-tri.png" alt="A photo of not a triangle">
+        <img id="bad-answer" src="img/bad-ans.jpg" alt="A photo of a bad answer">
       </p>
     </div>
   </div>
