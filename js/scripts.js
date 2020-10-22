@@ -1,31 +1,33 @@
-// side 1 != side 2 && != side 3 == scalene
-// all else: isoceles
-
-
 $(document).ready(function(){
   $("#triangle").submit(function(event){
     event.preventDefault();
     const side1= parseInt($("input#side1").val());
     const side2= parseInt($("input#side2").val());
     const side3= parseInt($("input#side3").val());
-    console.log(side1, side2, side3);
-    if (side1 === side2 && side1 === side3) {
-      $("#equilateral").show();
+    if (isNaN(side1) || isNaN(side2) || isNaN(side3)) {
+      const badAnswer = "not a series of numbers. :( Measurements must be in numbers";
+      $(".output").show();
+      $("#triangle-answer").text(badAnswer);
     }
-    // if else (side3 >= side1) {
-    //   $("#not-a-triangle").show();
-    // }
-    else if (side2 >= side1 + side3 || side1 >= side2 + side3) {
-      $("#not-a-triangle").show();
+    else if (side1 === side2 && side1 === side3) {
+      const equilateral = "an equilateral triangle!";
+      $(".output").show();
+      $("#triangle-answer").text(equilateral);
     }
-    // if else (side1 >= side2 + side3) {
-    //   $("#not-a-triangle").show();
-    // }
-    // if else (side1 !== side2 && side1 !== side3 && side2 !== side3) {
-    //   $("#scalene").show();
-    // }
+    else if (side2 >= side1 + side3 || side1 >= side2 + side3 || side3 >= side2 + side1) {
+      const notTriangle = "not a triangle at all";
+      $(".output").show();
+      $("#triangle-answer").text(notTriangle);
+    }
+    else if (side1 !== side2 && side1 !== side3 && side2 !== side3) {
+      const scalene = "a scalene triangle";
+      $(".output").show();
+      $("#triangle-answer").text(scalene);
+    }
     else {
-      $("#isoceles").show();
+      const isoceles = "an isoceles triangle";
+      $(".output").show();
+      $("#triangle-answer").text(isoceles);
     };  
   });
 });
