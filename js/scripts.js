@@ -4,6 +4,7 @@ $(document).ready(function(){
     const side1= parseInt($("input#side1").val());
     const side2= parseInt($("input#side2").val());
     const side3= parseInt($("input#side3").val());
+    console.log(side1, side2);
     if (isNaN(side1) || isNaN(side2) || isNaN(side3)) {
       const badAnswer = "not a series of numbers. :( Measurements must be in numbers";
       $(".output").show();
